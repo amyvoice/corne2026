@@ -95,8 +95,13 @@
         };
 
         layer5 {
-            bindings = <&mo 4>;
-            key-positions = <38 39>;
+            bindings = <&mo 5>;
+            key-positions = <37 36>;
+        };
+
+        layer6 {
+            bindings = <&mo 6>;
+            key-positions = <24 38>;
         };
     };
 
@@ -154,7 +159,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Default {
             display-name = "QWERTY";
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E      &kp R         &kp T                                         &kp UP               &kp Y        &kp U       &kp I           &kp O    &kp P      &kp BSPC
@@ -181,28 +186,28 @@
         ArrowMouseBT {
             display-name = "SYMBOL";
             bindings = <
-&kp ESCAPE      &kp PAGE_UP    &mkp MB1      &kp UP_ARROW  &mkp MB2      &kp C_VOLUME_UP                              &mmv MOVE_UP                     &kp C_VOLUME_UP    &mkp MB1         &mmv MOVE_UP       &mkp MB2            &kp PAGE_UP    &kp PAGE_UP
-&kp HOME        &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT     &kp C_VOLUME_DOWN            &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &kp C_VOLUME_DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN     &mmv MOVE_RIGHT     &kp PAGE_DOWN  &kp PAGE_DOWN
-&bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_USB       &trans                    &mmv MOVE_DOWN                   &kp LC(LS(HOME))   &kp LC(LS(END))  &kp LC(LS(COMMA))  &kp LC(LS(PERIOD))  &kp LA(LEFT)   &kp LA(RIGHT)
-                                             &kp LCTRL     &kp LEFT_GUI  &msc SCRL_UP                                                                  &msc SCRL_DOWN     &trans           &kp RC(RIGHT_GUI)
+&kp ESCAPE      &kp PAGE_UP    &mkp MB1      &kp UP_ARROW  &mkp MB2      &kp C_VOLUME_UP                                  &mmv MOVE_UP                     &kp C_VOLUME_UP    &mkp MB1         &mmv MOVE_UP       &mkp MB2            &kp PAGE_UP    &kp PAGE_UP
+&kp HOME        &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT     &kp C_VOLUME_DOWN                &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &kp C_VOLUME_DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN     &mmv MOVE_RIGHT     &kp PAGE_DOWN  &kp PAGE_DOWN
+&bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_USB       &kp ESCAPE                    &mmv MOVE_DOWN                   &kp LC(LS(HOME))   &kp LC(LS(END))  &kp LC(LS(COMMA))  &kp LC(LS(PERIOD))  &kp LA(LEFT)   &kp LA(RIGHT)
+                                             &kp LCTRL     &kp LEFT_GUI  &msc SCRL_UP                                                                      &msc SCRL_DOWN     &trans           &kp RC(RIGHT_GUI)
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_3 {
+        FunctionAndMacro {
             display-name = "Fn";
             bindings = <
-&kp ESC  &kp ESC  &kp F1  &kp F2     &kp F3    &kp F4                               &mmv MOVE_UP                     &M0             &M1        &M2        &M3            &none           &none
-&kp ESC  &kp ESC  &kp F5  &kp F6     &kp F7    &kp F8               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &M5             &M6        &M4        &none          &none           &none
-&kp ESC  &kp ESC  &kp F9  &kp F10    &kp F11   &kp F12   &kp ESC                    &mmv MOVE_DOWN                   &kp LC(J)       &kp LC(T)  &kp LC(W)  &kp LC(LS(T))  &kp SCROLLLOCK  &none
-                          &kp LCTRL  &kp LALT  &kp LGUI                                                              &msc SCRL_DOWN  &trans     &trans
+&bootloader  &kp ESC  &kp F1  &kp F2     &kp F3    &kp F4                               &msc SCRL_UP                     &M0             &M1        &M2        &M3            &none  &none
+&kp ESC      &kp ESC  &kp F5  &kp F6     &kp F7    &kp F8               &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &M5             &M6        &M4        &none          &none  &none
+&kp ESC      &kp ESC  &kp F9  &kp F10    &kp F11   &kp F12   &kp ESC                    &msc SCRL_DOWN                   &kp LC(J)       &kp LC(T)  &kp LC(W)  &kp LC(LS(T))  &none  &none
+                              &kp LCTRL  &kp LALT  &kp LGUI                                                              &msc SCRL_DOWN  &trans     &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_4 {
+        Additional {
             bindings = <
 &trans  &kp LS(LA(LC(LG(X))))  &kp LC(LA(LS(LG(W))))  &kp LS(LA(LC(LG(P))))  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans                 &trans                 &trans                 &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -211,7 +216,16 @@
             >;
         };
 
-        layer_5 {
+        Additional2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        layer_6 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
