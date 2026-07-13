@@ -39,9 +39,59 @@
     combos {
         compatible = "zmk,combos";
 
-        softoff {
-            bindings = <&soft_off>;
-            key-positions = <1 15 29>;
+        number1 {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <14 1>;
+        };
+
+        number2 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <2 15>;
+        };
+
+        number3 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <3 16>;
+        };
+
+        number4 {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <4 17>;
+        };
+
+        number5 {
+            bindings = <&kp N5>;
+            key-positions = <5 18>;
+        };
+
+        number6 {
+            bindings = <&kp NUMBER_6>;
+            key-positions = <7 22>;
+        };
+
+        number7 {
+            bindings = <&kp N7>;
+            key-positions = <8 23>;
+        };
+
+        number8 {
+            bindings = <&kp N8>;
+            key-positions = <9 24>;
+        };
+
+        number9 {
+            bindings = <&kp N9>;
+            key-positions = <10 25>;
+        };
+
+        number0 {
+            bindings = <&kp N0>;
+            key-positions = <11 26>;
+        };
+
+        layer4 {
+            bindings = <&mo 4>;
+            key-positions = <38 39>;
         };
     };
 
@@ -104,14 +154,14 @@
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E      &kp R         &kp T                                         &kp UP               &kp Y        &kp U       &kp I           &kp O    &kp P      &kp BSPC
 &kp LEFT_SHIFT  &kp A  &kp S  &kp D      &kp F         &kp G                               &kp LEFT  &mkp MB1  &kp RIGHT  &kp H        &kp J       &kp K           &kp L    &kp ENTER  &kp ENTER
-&kp LCTRL       &kp Z  &kp X  &kp C      &kp V         &kp B                 &kp ESCAPE              &kp DOWN             &kp N        &kp M       &kp COMMA       &kp DOT  &kp FSLH   &kp DELETE
+&kp LCTRL       &kp Z  &kp X  &kp C      &kp V         &kp B                 &kp ESCAPE              &kp DOWN             &kp N        &kp M       &kp COMMA       &kp DOT  &kp FSLH   &lt 3 DELETE
                               &kp LCTRL  &kp LEFT_GUI  &mt LEFT_SHIFT SPACE                                               &lt 1 SPACE  &lt 2 LEFT  &mt RALT RIGHT
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        lower_layer {
+        NUMBER {
             display-name = "NUMBER";
             bindings = <
 &kp ESCAPE     &kp N1    &kp N2         &kp N3                &kp N4             &kp N5                                              &mmv MOVE_UP                     &kp N6     &kp N7            &kp N8            &kp N9             &kp N0         &kp BSPC
@@ -123,7 +173,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        raise_layer {
+        ArrowMouseBT {
             display-name = "SYMBOL";
             bindings = <
 &kp ESCAPE      &kp PAGE_UP    &mkp MB1      &kp UP_ARROW  &mkp MB2      &kp C_VOLUME_UP                              &mmv MOVE_UP                     &kp C_VOLUME_UP    &mkp MB1         &mmv MOVE_UP       &mkp MB2            &kp PAGE_UP    &kp PAGE_UP
@@ -138,13 +188,22 @@
         layer_3 {
             display-name = "Fn";
             bindings = <
-&studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                       &trans       &trans     &trans                                                                   &trans       &trans     &trans
+&kp ESC  &kp ESC  &kp F1  &kp F2     &kp F3    &kp F4                               &mmv MOVE_UP                     &M0             &M1        &M2        &M3            &none           &none
+&kp ESC  &kp ESC  &kp F5  &kp F6     &kp F7    &kp F8               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &M5             &M6        &M4        &none          &none           &none
+&kp ESC  &kp ESC  &kp F9  &kp F10    &kp F11   &kp F12   &kp ESC                    &mmv MOVE_DOWN                   &kp LC(J)       &kp LC(T)  &kp LC(W)  &kp LC(LS(T))  &kp SCROLLLOCK  &none
+                          &kp LCTRL  &kp LALT  &kp LGUI                                                              &msc SCRL_DOWN  &trans     &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
         };
     };
 };
