@@ -47,8 +47,8 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
-  - {t: '$$mdi:arrow-left-bold$$', h: SYMBOL}
-  - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: PRINTSCREEN, h: SYMBOL}
   NUMBER:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
@@ -96,7 +96,7 @@ layers:
   - Gui+$$mdi:arrow-right-bold$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', type: held}
-  - PRINTSCREEN
+  - {t: PRINTSCREEN, type: held alternate}
   - $$mdi:backspace-reverse-outline$$
   SYMBOL:
   - $$mdi:keyboard-esc$$
@@ -145,8 +145,8 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - $$mdi:pan-up$$
   - $$mdi:pan-down$$
-  - {type: held}
-  - Ctl+RIGHT GUI
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: Ctl+RIGHT GUI, type: held}
   Fn:
   - $$mdi:progress-download$$
   - $$mdi:keyboard-esc$$
@@ -370,3 +370,13 @@ combos:
   k: Additional2
 - p: [24, 38]
   k: '6'
+- p: [10, 12]
+  k: $$mdi:backspace-reverse-outline$$
+- p: [42, 43]
+  k: $$mdi:apple-keyboard-option$$
+- p: [4, 5]
+  k: {t: '$$mdi:backspace$$', type: backspace}
+- p: [17, 18]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
+- p: [5, 3]
+  k: $$mdi:backspace-reverse-outline$$
