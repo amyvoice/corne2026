@@ -193,7 +193,7 @@
                               &kp LCTRL  &kp LEFT_GUI  &mt LEFT_SHIFT SPACE                                               &lt 1 SPACE  &lt 1 SPACE  &lt 2 PRINTSCREEN
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&inc_dec_kp BACKSPACE LC(Z)>, <&rsr_trans>;
         };
 
         NUMBER {
